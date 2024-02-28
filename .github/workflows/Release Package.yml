@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  publish-gpr:
+  build:
     permissions:
       packages: write
       contents: write
