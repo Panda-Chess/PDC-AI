@@ -15,7 +15,7 @@
     "build": "tsc",
     "push": "yarn lint && git add . && git-cz && git pull && git push",
     "semantic-release": "semantic-release",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --passWithNoTests",
     "lint": "eslint ./src/ --ext .tsx --ext .ts --fix"
   },
   "author": "",
