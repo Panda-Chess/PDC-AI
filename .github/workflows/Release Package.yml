@@ -12,7 +12,6 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Create NPMRC
