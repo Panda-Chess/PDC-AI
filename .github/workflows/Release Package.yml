@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Create NPMRC
         run: |
-            echo "//npm.pkg.github.com/:_authToken=${{ secrets.SECRET_TOKEN }}" >> ~/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
             echo "@panda-chess:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
