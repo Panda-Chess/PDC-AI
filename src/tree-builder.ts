@@ -9,6 +9,7 @@ export const buildTree = (gameTree: GameTree, color: "white" | "black", iteratio
     const gameTrees = generateChildren(gameTree, color);
 
     for(const tree of gameTrees) {
+        tree.value = Math.floor(Math.random() * 10);
         const newTree = buildTree(tree, color === "white" ? "black" : "white", iterations - 1);
 
         if(newTree) {
