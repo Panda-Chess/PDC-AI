@@ -43,5 +43,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@panda-chess/pdc-core": "latest"
   }
 }
