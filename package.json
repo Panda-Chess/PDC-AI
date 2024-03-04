@@ -30,6 +30,7 @@
     "@semantic-release/github": "^9.0.6",
     "@types/jest": "^29.5.7",
     "@types/node": "^20.6.4",
+    "@types/uuid": "^9.0.5",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "babel-jest": "^29.7.0",
@@ -43,6 +44,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@panda-chess/pdc-core": "^0.3.4"
+    "@panda-chess/pdc-core": "^0.3.4",
+    "uuid": "^9.0.1"
   }
 }
