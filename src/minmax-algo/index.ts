@@ -1,0 +1,1 @@
+export {minmaxAlgo} from "./minmax-algo";
