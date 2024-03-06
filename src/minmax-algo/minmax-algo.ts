@@ -10,7 +10,7 @@ export const minmaxAlgo: GenericAlgorithm = (pieces, color) => {
     const moves: IdentificableMove[] = [];
 
     for(const child of children) {
-        moves.push(rateMove(makeMove(child.move!, pieces), child.move, color, 2, "black"));
+        moves.push(rateMove(makeMove(child.move!, pieces), child.move, color, 3, color === "white"? "black" : "white"));
     }
 
     return moves;
