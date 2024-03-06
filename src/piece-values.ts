@@ -10,5 +10,12 @@ export const pieceValues = {
 } as const;
 
 export const getPiecesValue = (pieces: Piece[], color: "white" | "black"): number => {
-    return pieces.filter(x=>x.color === color).reduce((acc, piece) => acc + pieceValues[piece.pieceType], 0);
+    return pieces
+        .filter(x=>x.color === color)
+        .filter(x=>x.position.x !== -1 && x.position.y !== -1)
+        .reduce((acc, piece) => acc + pieceValues[piece.pieceType], 0)
+        - pieces
+            .filter(x=>x.color !== color)
+            .filter(x=>x.position.x !== -1 && x.position.y !== -1)
+            .reduce((acc, piece) => acc + pieceValues[piece.pieceType], 0);
 };

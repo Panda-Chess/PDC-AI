@@ -1,14 +1,10 @@
-import { Move, getMoves, makeMove } from "@panda-chess/pdc-core";
-import { GameTree } from "../game-tree";
+import { Move, getMoves } from "@panda-chess/pdc-core";
 import { GenericAlgorithm } from "../generic-algo";
 import { v4 as uuid } from "uuid";
+import { IdentificableMove } from "../identificable-move";
 
 export const randomAlgo: GenericAlgorithm = (pieces, color) => {
-    const gameTree: GameTree = {
-        pieces: pieces,
-        value: 0,
-        children: []
-    };
+    const possibleMoves: IdentificableMove[] = [];
 
     const currentPieces = pieces.filter(x=>x.color === color).filter(x=>x.position.x !== -1 && x.position.y !== -1);
 
@@ -16,21 +12,16 @@ export const randomAlgo: GenericAlgorithm = (pieces, color) => {
         const moves: Move[] = getMoves(piece, pieces);
 
         for(const move of moves) {
-            const newPieces = makeMove(move, pieces);
             const value = Math.floor(Math.random() * 10);
             const identificableMove = {
                 id: uuid(),
-                move: move
+                move: move,
+                value: value
             };
 
-            gameTree.children.push({
-                pieces: newPieces,
-                value: value,
-                move: identificableMove,
-                children: []
-            });
+            possibleMoves.push(identificableMove);
         }
     }
 
-    return gameTree;
+    return possibleMoves;
 };

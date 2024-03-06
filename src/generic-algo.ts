@@ -1,4 +1,4 @@
 import { Piece } from "@panda-chess/pdc-core";
-import { GameTree } from "./game-tree";
+import { IdentificableMove } from "./identificable-move";
 
-export type GenericAlgorithm = (pieces: Piece[], color: "white" | "black") => GameTree;
+export type GenericAlgorithm = (pieces: Piece[], color: "white" | "black") => IdentificableMove[];

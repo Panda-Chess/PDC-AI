@@ -45,7 +45,7 @@
     "max-statements": [
       "error",
       {
-        "max": 15
+        "max": 30
       }
     ]
   }

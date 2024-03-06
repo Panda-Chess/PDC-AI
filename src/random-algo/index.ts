@@ -1,0 +1,1 @@
+export {randomAlgo} from "./random-algo";
